@@ -53,19 +53,19 @@ export default function HowWeWork() {
         </div>
         <Section className="relative z-10 py-24 lg:py-32">
 
-        <motion.div {...fade()} className="mb-16 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-px" style={{ backgroundColor: C }} />
+        <motion.div {...fade()} className="mb-16 grid gap-6 lg:grid-cols-[auto_1fr] lg:items-end">
+          <p className="max-w-sm text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+            A structured process that eliminates ambiguity and delivers predictable outcomes.
+          </p>
+          <div className="lg:text-right">
+            <div className="flex items-center gap-3 mb-4 justify-end">
               <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>02 — Process</p>
+              <span className="w-8 h-px" style={{ backgroundColor: C }} />
             </div>
             <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
               How we work
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed lg:text-right" style={{ color: 'var(--fg-muted)' }}>
-            A structured process that eliminates ambiguity and delivers predictable outcomes.
-          </p>
         </motion.div>
 
         <div className="grid gap-px sm:grid-cols-2 lg:grid-cols-3" style={{ backgroundColor: 'var(--border)' }}>

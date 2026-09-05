@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Section from '../layout/section'
 
 const C = '#fb4c1e'
-
-const BUDGET = ['< $10K', '$10K – $50K', '$50K – $100K', '$100K – $250K', '$250K+']
 
 const STEPS = [
   'Once we receive and process your request, we will get back to you to detail your project needs and sign an NDA to ensure confidentiality.',
@@ -24,26 +21,24 @@ const fade = (delay = 0) => ({
 })
 
 export default function Contact() {
-  const [budget, setBudget] = useState('$10K – $50K')
-
   return (
     <div id="contact" style={{ borderTop: '1px solid var(--border)' }}>
       <Section className="py-24 lg:py-32">
 
         <motion.div {...fade()} className="mb-16">
-          <div className="flex items-center gap-3 mb-4 justify-end">
-            <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>06 — Start a Project</p>
-            <span className="w-8 h-px" style={{ backgroundColor: C }} />
-          </div>
-          <div className="grid gap-6 lg:grid-cols-[auto_1fr] lg:items-end">
-            <p className="max-w-lg text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
-              Book a call or fill out the form below and we will get back to you once we have processed your request.
-            </p>
-            <div className="lg:text-right">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-8 h-px" style={{ backgroundColor: C }} />
+                <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>08 — Start a Project</p>
+              </div>
               <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
                 Let's discuss<br />your project
               </h2>
             </div>
+            <p className="max-w-lg text-sm leading-relaxed lg:text-right" style={{ color: 'var(--fg-muted)' }}>
+              Book a call or fill out the form below and we will get back to you once we have processed your request.
+            </p>
           </div>
         </motion.div>
 
@@ -86,23 +81,6 @@ export default function Contact() {
                 <input type="tel" name="phone" required placeholder="+1 (555) 000-0000" className={inputCls} style={inputStyle}
                   onFocus={e => (e.currentTarget.style.borderBottomColor = C)}
                   onBlur={e => (e.currentTarget.style.borderBottomColor = 'var(--border-mid)')} />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-medium mb-3" style={{ color: 'var(--fg-muted)' }}>Project budget</label>
-              <div className="flex flex-wrap gap-2">
-                {BUDGET.map(opt => (
-                  <button key={opt} type="button" onClick={() => setBudget(opt)}
-                    className="px-3 py-1.5 text-xs transition-all duration-200"
-                    style={{
-                      border: `1px solid ${budget === opt ? 'rgba(251,76,30,0.4)' : 'var(--border-mid)'}`,
-                      color: budget === opt ? C : 'var(--fg-muted)',
-                      backgroundColor: budget === opt ? 'rgba(251,76,30,0.05)' : 'transparent',
-                    }}>
-                    {opt}
-                  </button>
-                ))}
               </div>
             </div>
 

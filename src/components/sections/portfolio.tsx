@@ -30,14 +30,17 @@ const iconBtn = {
 
 export default function Portfolio() {
   return (
-    <div id="portfolio" style={{ borderTop: '1px solid var(--border)' }}>
+    <div style={{ borderTop: '1px solid var(--border)' }}>
       <div>
-        <Section className="pt-24 pb-0 lg:pt-32">
+        <Section id="technologies" className="pt-24 pb-0 lg:pt-32">
           <motion.div {...fade()} className="mb-20">
             <div className="flex items-center gap-3 mb-8 justify-end">
-              <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>04 — Technologies</p>
+              <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>05 — Technologies</p>
               <span className="w-8 h-px" style={{ backgroundColor: C }} />
             </div>
+            <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl lg:text-right" style={{ color: 'var(--fg)' }}>
+              Our tech stack
+            </h2>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px" style={{ backgroundColor: 'var(--border)' }}>
               {[
@@ -79,14 +82,14 @@ export default function Portfolio() {
         {/* Divider */}
         <div style={{ borderTop: '1px solid var(--border)' }} />
 
-        <Section className="py-24 lg:py-32">
+        <Section id="portfolio" className="py-24 lg:py-32">
 
           {/* ── Portfolio header ── */}
           <motion.div {...fade()} className="mb-20 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-8 h-px" style={{ backgroundColor: C }} />
-                <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>05 — Portfolio</p>
+                <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>06 — Portfolio</p>
               </div>
               <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
                 Selected work

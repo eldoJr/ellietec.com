@@ -114,19 +114,19 @@ export default function Testimonials() {
   return (
     <div style={{ borderTop: '1px solid var(--border)' }}>
       <Section className="pt-24 pb-16 lg:pt-32">
-        <motion.div {...fade()} className="grid gap-6 lg:grid-cols-[auto_1fr] lg:items-end">
-          <p className="max-w-sm text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
-            What the teams we have worked with say about the experience.
-          </p>
-          <div className="lg:text-right">
-            <div className="flex items-center gap-3 mb-4 justify-end">
-              <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>03 — Client Stories</p>
+        <motion.div {...fade()} className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-px" style={{ backgroundColor: C }} />
+              <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>04 — Client Stories</p>
             </div>
             <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
               Trusted by builders
             </h2>
           </div>
+          <p className="max-w-sm text-sm leading-relaxed lg:text-right" style={{ color: 'var(--fg-muted)' }}>
+            What the teams we have worked with say about the experience.
+          </p>
         </motion.div>
       </Section>
 

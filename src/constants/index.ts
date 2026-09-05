@@ -10,8 +10,8 @@ export const SITE = {
 export const NAV_LINKS: NavLink[] = [
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'About', href: '#services' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '#about' },
+  { label: 'Technologies', href: '#technologies' },
 ]
 
 export const SERVICES: Service[] = [

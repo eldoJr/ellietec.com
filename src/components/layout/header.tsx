@@ -63,26 +63,17 @@ export default function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-stretch gap-6 h-[60px] ml-auto mr-6">
-              <NavDropdown label="Services" href="#services">
-                <div className="grid grid-cols-2 gap-12">
-                  {[
-                    { title: 'Engineering', items: ['Systems Architecture', 'Full-stack Development', 'Cloud & DevOps', 'API Design', 'Performance Engineering'] },
-                    { title: 'Intelligence', items: ['AI Integration', 'Data Engineering', 'ML Systems', 'Process Automation', 'Analytics'] },
-                  ].map((group) => (
-                    <div key={group.title}>
-                      <p className="text-[10px] font-mono uppercase tracking-[0.15em] mb-5" style={{ color: 'var(--fg-subtle)' }}>{group.title}</p>
-                      <ul className="flex flex-col gap-3 pl-5" style={{ borderLeft: '1px solid var(--border)' }}>
-                        {group.items.map((item) => (
-                          <li key={item}>
-                            <a href="#services" className="text-sm transition-colors duration-150 hover:text-[#fb4c1e]" style={{ color: 'var(--fg-muted)' }}>{item}</a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </NavDropdown>
-
+              {NAV_LINKS.filter(l => l.label !== 'Portfolio').map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={navLinkClass}
+                  style={{ color: 'var(--fg-muted)' }}
+                  onClick={e => { if (smoothScrollTo(link.href)) e.preventDefault() }}
+                >
+                  {link.label}
+                </a>
+              ))}
               <NavDropdown label="Portfolio" href="#portfolio">
                 <div className="grid grid-cols-3 gap-12">
                   {[
@@ -95,7 +86,7 @@ export default function Header() {
                       <ul className="flex flex-col gap-3 pl-5" style={{ borderLeft: '1px solid var(--border)' }}>
                         {group.items.map((item) => (
                           <li key={item}>
-                            <a href="#portfolio" className="text-sm transition-colors duration-150 hover:text-[#fb4c1e]" style={{ color: 'var(--fg-muted)' }}>{item}</a>
+                            <a href="#portfolio" onClick={e => { if (smoothScrollTo('#portfolio')) e.preventDefault() }} className="text-sm transition-colors duration-150 hover:text-[#fb4c1e]" style={{ color: 'var(--fg-muted)' }}>{item}</a>
                           </li>
                         ))}
                       </ul>
@@ -103,22 +94,6 @@ export default function Header() {
                   ))}
                 </div>
               </NavDropdown>
-
-              {NAV_LINKS.filter(l => !['Portfolio', 'Services'].includes(l.label)).map((link) => {
-                const active = typeof window !== 'undefined' && window.location.pathname === link.href
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className={navLinkClass}
-                    style={{ color: active ? 'var(--fg)' : 'var(--fg-muted)' }}
-                    onClick={e => { if (smoothScrollTo(link.href)) e.preventDefault() }}
-                  >
-                    {link.label}
-                    {active && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#fb4c1e]" />}
-                  </a>
-                )
-              })}
             </nav>
 
             {/* Right actions */}
