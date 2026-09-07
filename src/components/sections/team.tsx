@@ -21,7 +21,7 @@ export default function Team() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-px" style={{ backgroundColor: C }} />
-              <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>07 — Team</p>
+              <p className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase" style={{ color: C }}>06 — Team</p>
             </div>
             <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
               The people<br />behind the work

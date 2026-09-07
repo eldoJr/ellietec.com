@@ -26,19 +26,19 @@ export default function Contact() {
       <Section className="py-24 lg:py-32">
 
         <motion.div {...fade()} className="mb-16">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
+          <div className="grid gap-6 lg:grid-cols-[auto_1fr] lg:items-end">
+            <p className="max-w-lg text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+              Book a call or fill out the form below and we will get back to you once we have processed your request.
+            </p>
+            <div className="lg:text-right">
+              <div className="flex items-center gap-3 mb-4 justify-end">
+                <p className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase" style={{ color: C }}>07 — Start a Project</p>
                 <span className="w-8 h-px" style={{ backgroundColor: C }} />
-                <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>08 — Start a Project</p>
               </div>
               <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
                 Let's discuss<br />your project
               </h2>
             </div>
-            <p className="max-w-lg text-sm leading-relaxed lg:text-right" style={{ color: 'var(--fg-muted)' }}>
-              Book a call or fill out the form below and we will get back to you once we have processed your request.
-            </p>
           </div>
         </motion.div>
 
