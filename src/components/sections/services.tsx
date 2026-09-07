@@ -57,19 +57,40 @@ export default function Services() {
     <div id="services" style={{ borderTop: '1px solid var(--border)' }}>
       <Section className="py-24 lg:py-32">
         <motion.div {...fade(0.1)}>
-          <div className="mb-16 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-8 h-px" style={{ backgroundColor: C }} />
-                <p className="text-[11px] font-mono tracking-[0.2em] uppercase" style={{ color: C }}>01 — Services</p>
+          <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-stretch">
+            <div className="flex flex-col justify-between gap-8 p-8 lg:p-10">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-8 h-px" style={{ backgroundColor: C }} />
+                  <p className="text-[11px] font-mono font-bold tracking-[0.2em] uppercase" style={{ color: C }}>01 — Services</p>
+                </div>
+                <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
+                  Ellietec Professional Services
+                </h2>
               </div>
-              <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl" style={{ color: 'var(--fg)' }}>
-                Full-cycle software<br />development services
-              </h2>
+              <div className="flex flex-col gap-6">
+                <p className="max-w-md text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                  From concept to deployment and beyond, we cover every stage of the product lifecycle with engineering precision.
+                </p>
+                <motion.a
+                  href="#contact"
+                  onClick={e => { if (smoothScrollTo('#contact')) e.preventDefault() }}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium self-start"
+                  style={{ backgroundColor: C, color: '#fff' }}
+                  whileHover={{ scale: 1.04, backgroundColor: '#e03e10' }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Contact Us
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.a>
+              </div>
             </div>
-            <p className="max-w-md text-sm leading-relaxed lg:text-right" style={{ color: 'var(--fg-muted)' }}>
-              From concept to deployment and beyond, we cover every stage of the product lifecycle with engineering precision.
-            </p>
+            <div className="hidden lg:block">
+              <img src="/img/services.png" alt="Ellietec Professional Services" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           <div>
